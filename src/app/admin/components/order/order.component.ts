@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-order',
+  selector: 'app-unique-order',
   templateUrl: './order.component.html',
   styleUrl: './order.component.css'
 })

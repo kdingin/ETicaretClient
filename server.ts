@@ -5,6 +5,17 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import AppServerModule from './src/main.server';
 
+// Domino için gerekli olan import ve global değişken tanımlamaları
+const domino = require('domino');
+const fs = require('fs');
+const template = fs.readFileSync(join(resolve(dirname(fileURLToPath(import.meta.url)), '../browser'), 'index.html')).toString();
+const win = domino.createWindow(template);
+global['window'] = win;
+global['document'] = win.document;
+global['navigator'] = win.navigator;
+global['Node'] = win.Node;
+global['HTMLElement'] = win.HTMLElement;
+
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
