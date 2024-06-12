@@ -3,6 +3,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { CustomToastrService, ToastrMassageType, ToastrPosition } from './services/ui/custom-toastr.service';
 import { MessageType } from './services/admin/alertify.service';
+import { HttpClient } from '@angular/common/http';
 
 declare var $: any;
 
@@ -14,13 +15,14 @@ declare var $: any;
 export class AppComponent implements OnInit {
   title = 'ETicaretClient';
 
-  constructor(private toastrService:CustomToastrService) {
-    
-    
+  constructor() {  
   }
 
-  ngOnInit() {
-  
+  ngOnInit() { 
   }
 
 }
+
+$.get('https://localhost:44303/api/Products', (data) => {
+  console.log('Veri alındı:', data); 
+});

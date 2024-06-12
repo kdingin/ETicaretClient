@@ -27,7 +27,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    {provide:"baseUrl", useValue: "https://localhost:44303/api", multi:true}
   ],
   bootstrap: [AppComponent]
 })
