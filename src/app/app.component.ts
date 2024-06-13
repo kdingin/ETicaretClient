@@ -22,7 +22,3 @@ export class AppComponent implements OnInit {
   }
 
 }
-
-$.get('https://localhost:44303/api/Products', (data) => {
-  console.log('Veri alındı:', data); 
-});
