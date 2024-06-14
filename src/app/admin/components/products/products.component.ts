@@ -25,10 +25,10 @@ export class ProductsComponent  extends BaseComponent implements OnInit {
     }, "1a088946-4077-40c3-95d7-30c8dc9e5efb")
     .subscribe();*/
 
-    this.httpClientService.get<Product[]>({
+    /*this.httpClientService.get<Product[]>({
       controller:"products"
 
-    }).subscribe(data=>console.log(data));
+    }).subscribe(data=>console.log(data));*/
   }
 
 }
