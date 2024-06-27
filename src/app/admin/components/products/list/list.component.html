@@ -1,44 +1,57 @@
 <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource">
-  
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-      </ng-container>
-  
-      <!-- Stock Column -->
-      <ng-container matColumnDef="stock">
-        <th mat-header-cell *matHeaderCellDef> Stock </th>
-        <td mat-cell *matCellDef="let element"> {{element.stock}} </td>
-      </ng-container>
-  
-      <!-- Price Column -->
-      <ng-container matColumnDef="price">
-        <th mat-header-cell *matHeaderCellDef> Price </th>
-        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
-      </ng-container>
-  
-      <!-- Created Date Column -->
-      <ng-container matColumnDef="createdDate">
-        <th mat-header-cell *matHeaderCellDef> Created Date </th>
-        <td mat-cell *matCellDef="let element"> {{element.createdDate }} </td>
-      </ng-container>
-  
-      <!-- Updated Date Column -->
-      <ng-container matColumnDef="updatedDate">
-        <th mat-header-cell *matHeaderCellDef> Updated Date </th>
-        <td mat-cell *matCellDef="let element"> {{element.updatedDate}} </td>
-      </ng-container>
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-  
-    <mat-paginator 
-      [pageSizeOptions]="[5, 10, 20]"
-      showFirstLastButtons
-      aria-label="Select page of periodic elements">
-    </mat-paginator>
+  <div class="table-container">
+      <table mat-table [dataSource]="dataSource">
+        
+          <!-- Name column -->
+          <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+        
+          <!-- Stock column -->
+          <ng-container matColumnDef="stock">
+              <th mat-header-cell *matHeaderCellDef> Stock </th>
+              <td mat-cell *matCellDef="let element"> {{element.stock}} </td>
+          </ng-container>
+        
+          <!-- Price column -->
+          <ng-container matColumnDef="price">
+              <th mat-header-cell *matHeaderCellDef> Price </th>
+              <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+          </ng-container>
+        
+          <!-- Created Date column -->
+          <ng-container matColumnDef="createdDate">
+              <th mat-header-cell *matHeaderCellDef> Created Date </th>
+              <td mat-cell *matCellDef="let element"> {{element.createdDate }} </td>
+          </ng-container>
+        
+          <!-- Updated Date column -->
+          <ng-container matColumnDef="updatedDate">
+              <th mat-header-cell *matHeaderCellDef> Updated Date </th>
+              <td mat-cell *matCellDef="let element"> {{element.updatedDate}} </td>
+          </ng-container>
+        
+          <!-- Edit column -->
+          <ng-container matColumnDef="edit">
+              <th mat-header-cell *matHeaderCellDef>  </th>
+              <td mat-cell *matCellDef="let element"> <img src="../../../../../assets/edit.png" height="25" width="25"> </td>
+          </ng-container>
+        
+          <!-- Delete column -->
+          <ng-container matColumnDef="delete">
+              <th mat-header-cell *matHeaderCellDef width="50">  </th>
+              <td mat-cell *matCellDef="let element"> <img src="../../../../../assets/delete.png" height="25" width="25"> </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    
+      <mat-paginator 
+          [pageSizeOptions]="[5, 10, 20]"
+          showFirstLastButtons
+          aria-label="Select page of periodic elements">
+      </mat-paginator>
   </div>
-  
+</div>
