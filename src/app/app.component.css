@@ -1,0 +1,48 @@
+/* Genel stil ayarları */
+.navbar {
+    border-radius: 8px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #222222c4;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    color: #343a40;
+}
+
+.nav-link:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.dropdown-menu {
+    border-radius: 8px;
+}
+
+.btn-outline-success {
+    border-radius: 8px;
+}
+
+/* Mobil görünüm için düzenlemeler */
+@media (max-width: 767.98px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    .btn-outline-success {
+        font-size: 0.9rem;
+    }
+}

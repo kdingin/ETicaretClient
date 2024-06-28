@@ -1,8 +1,22 @@
-
-<mat-list role="list" class="sidebar-list">
-  <a mat-list-item role="listitem" routerLink="/admin">Dashboard</a>
-  <a mat-list-item role="listitem" routerLink="customers">Customers</a>
-  <a mat-list-item role="listitem" routerLink="products">Product</a>
-  <a mat-list-item role="listitem" routerLink="orders">Order</a>
-  <a mat-list-item role="listitem" routerLink="">Siteyi Gör</a>
-</mat-list>
+<mat-nav-list class="sidebar-list">
+  <a mat-list-item routerLink="/admin" class="sidebar-link">
+    <i class="fas fa-tachometer-alt"></i>
+    <span class="link-text">Dashboard</span>
+  </a>
+  <a mat-list-item routerLink="customers" class="sidebar-link">
+    <i class="fas fa-users"></i>
+    <span class="link-text">Customers</span>
+  </a>
+  <a mat-list-item routerLink="products" class="sidebar-link">
+    <i class="fas fa-boxes"></i>
+    <span class="link-text">Product</span>
+  </a>
+  <a mat-list-item routerLink="orders" class="sidebar-link">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="link-text">Order</span>
+  </a>
+  <a mat-list-item routerLink="" class="sidebar-link">
+    <i class="fas fa-globe"></i>
+    <span class="link-text">Siteyi Gör</span>
+  </a>
+</mat-nav-list>

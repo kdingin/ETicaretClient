@@ -1,6 +1,12 @@
 <app-header></app-header>
 <mat-drawer-container class="admin-container">
-    <mat-drawer mode="side" opened class="admin-left"><app-sidebar></app-sidebar></mat-drawer>
-    <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
-  </mat-drawer-container>
-  <app-footer></app-footer>
+    <mat-drawer mode="side" opened class="admin-left" class="mat-elevation-z4">
+        <app-sidebar></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="container mt-3">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
+<app-footer></app-footer>
