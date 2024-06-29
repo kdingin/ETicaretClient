@@ -47,10 +47,10 @@ export class ListComponent extends BaseComponent implements OnInit, AfterViewIni
     console.log('Edit element:', element);
   }
 
-  deleteElement(element: Element): void {
+  /*deleteElement(element: Element): void {
     
     console.log('Delete element:', element);
-  }
+  }*/
   ngAfterViewInit() {
     this.paginator.page.pipe(
       tap(() => this.getProducts(this.paginator.pageIndex, this.paginator.pageSize))
