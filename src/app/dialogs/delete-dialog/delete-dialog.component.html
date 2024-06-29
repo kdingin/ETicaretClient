@@ -1,0 +1,17 @@
+<div mat-dialog-content>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon>warning</mat-icon> Silme İşlemi
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Silmek istediğinize emin misiniz?</p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button [mat-dialog-close]="DeleteState.No">İptal</button>
+        <button mat-raised-button color="warn" [mat-dialog-close]="DeleteState.Yes" cdkFocusInitial>Evet</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

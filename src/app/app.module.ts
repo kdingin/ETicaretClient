@@ -11,7 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MatIconModule } from '@angular/material/icon';
-import { DeleteDirective } from './directives/admin/delete.directive';
 
 @NgModule({
   declarations: [

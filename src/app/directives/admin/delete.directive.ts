@@ -1,33 +1,55 @@
-import { Directive, ElementRef, EventEmitter, HostListener, Input, Output, Renderer2, input } from '@angular/core';
-import { HttpClientService } from '../../services/common/http-client.service';
+import { Directive, ElementRef, EventEmitter, HostListener, Input, Output, Renderer2 } from '@angular/core';
 import { ProductService } from '../../services/common/models/product.service';
 import { SpinnerType } from '../../base/base.component';
 import { NgxSpinnerService } from 'ngx-spinner';
-declare var $:any;
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteDialogComponent, DeleteState } from '../../dialogs/delete-dialog/delete-dialog.component';
+
+declare var $: any;
+
 @Directive({
   selector: '[appDelete]'
 })
 export class DeleteDirective {
+  @Input() id: string;
+  @Output() callback: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private element:ElementRef,private _renderer:Renderer2, private productService:ProductService,private spinner:NgxSpinnerService) 
-  {
-    const img=_renderer.createElement("img");
-    img.setAttribute("src","../../../../../assets/delete.png");
-    img.setAttribute("style","cursor:pointer");
-    img.width=25;
-    img.height=25;
-    _renderer.appendChild(element.nativeElement,img);
+  constructor(
+    private element: ElementRef,
+    private _renderer: Renderer2,
+    private productService: ProductService,
+    private spinner: NgxSpinnerService,
+    public dialog: MatDialog
+  ) {
+    const img = this._renderer.createElement('img');
+    this._renderer.setAttribute(img, 'src', '../../../../../assets/delete.png');
+    this._renderer.setStyle(img, 'cursor', 'pointer');
+    img.width = 25;
+    img.height = 25;
+    this._renderer.appendChild(element.nativeElement, img);
   }
 
-  @Input() id:string;
-  @Output() callback: EventEmitter<any>=new EventEmitter<any>;
-  @HostListener("click")
-  onClick(){
-    this.spinner.show(SpinnerType.BallAtom);
-    const td: HTMLTableCellElement=this.element.nativeElement;
-    this.productService.delete(this.id);
-    $(td.parentElement).fadeOut(2000, ()=>{
-      this.callback.emit();
+  @HostListener('click')
+  async onClick() {
+    this.openDialog(async () => {
+      this.spinner.show(SpinnerType.BallAtom);
+      const td: HTMLTableCellElement = this.element.nativeElement;
+      await this.productService.delete(this.id);
+      $(td.parentElement).fadeOut(2000, () => {
+        this.callback.emit();
+      });
+    });
+  }
+
+  openDialog(afterClosed: any): void {
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      data: DeleteState.Yes,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === DeleteState.Yes) {
+        afterClosed();
+      }
     });
   }
 }
