@@ -12,7 +12,7 @@ export enum DeleteState {
   styleUrls: ['./delete-dialog.component.css']
 })
 export class DeleteDialogComponent {
-  public DeleteState = DeleteState; // Enum'ı sınıfın bir üyesi olarak ekleyin
+  public DeleteState = DeleteState; 
 
   constructor(
     public dialogRef: MatDialogRef<DeleteDialogComponent>,

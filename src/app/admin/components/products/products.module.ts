@@ -16,6 +16,7 @@ import { DeleteDirective } from '../../../directives/admin/delete.directive';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../../../dialogs/delete-dialog/delete-dialog.component';
 import { MatCardModule } from '@angular/material/card';
+import { FileUploadModule } from '../../../services/common/file-upload/file-upload.module';
 @NgModule({
   declarations: [
     ProductsComponent,
@@ -38,7 +39,8 @@ import { MatCardModule } from '@angular/material/card';
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    FileUploadModule
   ]
 })
 export class ProductsModule { }

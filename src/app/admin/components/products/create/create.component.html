@@ -13,5 +13,7 @@
   <input matInput type="number" min="0" value="0" #txtPrice>
 </mat-form-field>
 
+<button mat-stroked-button class="btn" (click)="create(txtName,txtPrice,txtStock)">Create Product</button>
+<hr/>
 
-    <button mat-stroked-button class="btn" (click)="create(txtName,txtPrice,txtStock)">Basic</button>
+<app-file-upload [options]="fileUploadOptions"></app-file-upload>

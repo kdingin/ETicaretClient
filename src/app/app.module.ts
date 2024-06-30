@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MatIconModule } from '@angular/material/icon';
+import { FileUploadComponent } from './services/common/file-upload/file-upload.component';
+import { FileUploadModule } from './services/common/file-upload/file-upload.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { MatIconModule } from '@angular/material/icon';
     UiModule,
     ToastrModule.forRoot(),
     NgxSpinnerModule,
-    MatIconModule
+    MatIconModule,
+    FileUploadModule
   ],
   providers: [
     provideClientHydration(),
