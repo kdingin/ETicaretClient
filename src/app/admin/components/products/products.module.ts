@@ -17,13 +17,13 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../../../dialogs/delete-dialog/delete-dialog.component';
 import { MatCardModule } from '@angular/material/card';
 import { FileUploadModule } from '../../../services/common/file-upload/file-upload.module';
+import { DialogModule } from '@angular/cdk/dialog';
 @NgModule({
   declarations: [
     ProductsComponent,
     CreateComponent,
     ListComponent,
-    DeleteDirective,
-    DeleteDialogComponent
+    DeleteDirective
   ],
   imports: [
     CommonModule,
@@ -39,6 +39,7 @@ import { FileUploadModule } from '../../../services/common/file-upload/file-uplo
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
+    DialogModule,
     MatCardModule,
     FileUploadModule
   ]

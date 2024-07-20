@@ -13,6 +13,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { FileUploadComponent } from './services/common/file-upload/file-upload.component';
 import { FileUploadModule } from './services/common/file-upload/file-upload.module';
+import { FileUploadDialogComponent } from './dialogs/file-upload-dialog/file-upload-dialog.component';
+import { DialogModule } from './dialogs/dialog.module';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { FileUploadModule } from './services/common/file-upload/file-upload.modu
     ToastrModule.forRoot(),
     NgxSpinnerModule,
     MatIconModule,
-    FileUploadModule
+    FileUploadModule,
+    DialogModule
   ],
   providers: [
     provideClientHydration(),
