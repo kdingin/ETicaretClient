@@ -8,6 +8,8 @@ import { AlertifyService, MessageType, Position } from '../../../../services/adm
 import { MatPaginator } from '@angular/material/paginator';
 import { merge } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { DialogService } from '../../../../services/common/dialog.service';
+import { SelectProductImageDialogComponent } from '../../../../dialogs/select-product-image-dialog/select-product-image-dialog.component';
 
 @Component({
   selector: 'app-list',
@@ -15,11 +17,11 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent extends BaseComponent implements OnInit, AfterViewInit {
-  constructor(spinner: NgxSpinnerService, private productService: ProductService, private alertifyService: AlertifyService) {
+  constructor(spinner: NgxSpinnerService, private productService: ProductService, private alertifyService: AlertifyService,private dialogService:DialogService) {
     super(spinner);
   }
 
-  displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate', 'updatedDate', 'delete','edit'];
+  displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate', 'updatedDate', 'delete','photos','edit'];
   dataSource: MatTableDataSource<List_Product> = new MatTableDataSource<List_Product>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -46,7 +48,16 @@ export class ListComponent extends BaseComponent implements OnInit, AfterViewIni
     
     console.log('Edit element:', element);
   }
-
+  uploadPhoto(element: any, id:string): void {
+    this.dialogService.openDialog({
+      componentType:SelectProductImageDialogComponent,
+      data:id,
+      options:{
+        width:"1400px"
+      }
+    })
+    console.log('Fotoğraf yükleme işlemi başlatıldı', element);
+  }
   /*deleteElement(element: Element): void {
     
     console.log('Delete element:', element);

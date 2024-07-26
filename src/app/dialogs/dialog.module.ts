@@ -7,11 +7,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SelectProductImageDialogComponent } from './select-product-image-dialog/select-product-image-dialog.component';
+import { FileUploadModule } from "../services/common/file-upload/file-upload.module";
 
 @NgModule({
   declarations: [
     DeleteDialogComponent,
-    FileUploadDialogComponent
+    SelectProductImageDialogComponent
   ],
   imports: [
     CommonModule,
@@ -19,11 +21,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     MatIconModule,
     MatButtonModule,
-    BrowserAnimationsModule
-  ],
+    BrowserAnimationsModule,
+    FileUploadModule
+],
   exports: [
-    DeleteDialogComponent,
-    FileUploadDialogComponent
+    DeleteDialogComponent
   ]
 })
 export class DialogModule { }
