@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SelectProductImageDialogComponent } from './select-product-image-dialog/select-product-image-dialog.component';
 import { FileUploadModule } from "../services/common/file-upload/file-upload.module";
 
+
 @NgModule({
   declarations: [
     DeleteDialogComponent,
@@ -17,10 +18,7 @@ import { FileUploadModule } from "../services/common/file-upload/file-upload.mod
   ],
   imports: [
     CommonModule,
-    MatDialogModule,
-    MatCardModule,
-    MatIconModule,
-    MatButtonModule,
+    MatDialogModule, MatCardModule, MatIconModule, MatButtonModule,
     BrowserAnimationsModule,
     FileUploadModule
 ],
